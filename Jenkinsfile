@@ -13,7 +13,7 @@ pipeline {
 
         stage("Checkout from SCM") {
                steps {
-                   git branch: 'main', credentialsId: 'github', url: 'https://github.com/sagarkulkarni1989/gitops-register-app'
+                   git branch: 'main', credentialsId: 'github', url: 'https://github.com/prathapKitti/gitops-register-app-1'
                }
         }
 
@@ -30,15 +30,15 @@ pipeline {
         stage("Push the changed deployment file to Git") {
             steps {
                 sh """
-                   git config --global user.name "sagarkulkarni1989"
-                   git config --global user.email "mesagarkulkarni@gmail.com"
-                   git config --global credential.https://github.com/sagarkulkarni1989/gitops-register-app.sagarkulkarni1989 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
+                   git config --global user.name "prathapKitti"
+                   git config --global user.email "prathapakindia@gmail.com"
+                   git config --global credential.https://github.com/prathapKitti/gitops-register-app-1.prathapKitti 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
                    git add deployment.yaml
                    git commit -m "Updated Deployment Manifest"
-                   git push https://sagarkulkarni1989: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@github.com/sagarkulkarni1989/gitops-register-app main
+                   git push https://prathapKitti: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@github.com/prathapKitti/gitops-register-app-1 main
                 """
                 // withCredentials([string(credentialsId: 'token1', variable: 'token1', gitToolName: 'Default')]){
-                //   sh "git push https://github.com/sagarkulkarni1989/gitops-register-app main"
+                //   sh "git push https://github.com/prathapKitti/gitops-register-app-1 main"
                 // }
             }
         }
